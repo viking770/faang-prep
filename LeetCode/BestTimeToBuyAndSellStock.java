@@ -1,4 +1,4 @@
-public class LC121 {
+public class BestTimeToBuyAndSellStock {
 
     public static int maxProfit(int[] prices) {
         int min = Integer.MAX_VALUE;
@@ -13,7 +13,7 @@ public class LC121 {
 
     public static void main(String[] args){
         int[] prices = {7,1,5,3,6,4};
-        System.out.println(LC121.maxProfit(prices));
+        System.out.println(BestTimeToBuyAndSellStock.maxProfit(prices));
     }
     
 }

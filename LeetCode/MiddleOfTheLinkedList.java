@@ -1,7 +1,5 @@
-public class LinkedList{
-    private int size;
+public class MiddleOfTheLinkedList{
     private Node head;
-    private Node tail;
 
     class Node{
        int data;
@@ -13,23 +11,19 @@ public class LinkedList{
        }
     }
 
-    public LinkedList(int data){
+    public MiddleOfTheLinkedList(int data){
         Node node = new Node(data);
         this.head = node;
-        this.tail = node;
-        size = 1;
     }
 
-    public Node removeMiddleNode(){
+    public Node findMiddleNode(){
         if(head==null) return null;
         Node slow = head;
         Node fast = head.next.next;
         while(fast!=null && fast.next!=null){
-            fast = fast.next.next;
             slow = slow.next;
-            
+            fast = fast.next.next;
         }
-        slow.next = slow.next.next;
-        return head;
+        return slow;
     }
 }

@@ -1,4 +1,7 @@
-class Solution {
+import java.util.*;
+
+public class MergeIntervals {
+    
     public int[][] merge(int[][] intervals) {
         if(intervals.length<=1)
             return intervals;
@@ -21,7 +24,5 @@ class Solution {
     public static void main(String args[]){
         int[][] intervals = [[1,3],[2,6],[8,10],[15,18]];
         System.out.println(merge(intervals));
-        intervals = [[4,7],[1,4]];
-        intervals = [[1,4],[4,5]];
     }
 }

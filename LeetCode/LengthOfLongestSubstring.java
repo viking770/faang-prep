@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class LC3 {
+public class LengthOfLongestSubstring {
 
     public int maxLengthOfSubstring(String s){
         int left=0;
@@ -19,7 +19,7 @@ public class LC3 {
     }
 
     public static void main(String[] args){
-        LC3 lc3 = new LC3();
+        LengthOfLongestSubstring lc3 = new LengthOfLongestSubstring();
         String s = "pcwwkew";
         System.out.println(lc3.maxLengthOfSubstring(s));
     }
