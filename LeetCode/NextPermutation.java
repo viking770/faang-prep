@@ -1,4 +1,3 @@
-import java.util.*;
 public class NextPermutation {
 
     public void reverse(int[] nums, int i){
@@ -17,7 +16,6 @@ public class NextPermutation {
         for(i=nums.length-1; i>0; i--){
 
             if(nums[i]>nums[i-1]){
-                int minMax = nums[i-1];
                 int idx = i-1;
                 for(int j = i; j<nums.length; j++){
                     if(nums[j]>nums[i-1] && (idx==i-1 || nums[j]<=nums[idx])){
@@ -37,7 +35,7 @@ public class NextPermutation {
     public static void main(String[] args){
         int[] nums = {10,2,3,4,0};
         NextPermutation nextPermutation = new NextPermutation();
-        nextPermutation.findNextPermutation(nums);
+        nextPermutation.nextPermutation(nums);
     }
     
 }
