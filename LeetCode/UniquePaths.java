@@ -22,7 +22,7 @@ public class UniquePaths {
         int max = Math.max(m, n);
         int[] map = new int[min];
         for(int i=0; i <min;i++)
-            dp[i] = 1;
+            map[i] = 1;
         
         for (int i = 0; i < max; i++) {
             for (int j = 0; j < min; j++) {
