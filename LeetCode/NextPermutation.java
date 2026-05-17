@@ -1,41 +1,37 @@
 import java.util.*;
 public class NextPermutation {
 
-    void findNextPermutation(int[] nums) {
-            int pivot = findBreakingPoint(nums) - 1;
-            if (pivot != -1) {
-            int nextPrefix = rightMostSuccessor(nums, nums[pivot]); 
-            swap(nums, pivot, nextPrefix);
+    public void reverse(int[] nums, int i){
+        int s = i; int e = nums.length-1; 
+        while(s<e){
+            int temp = nums[e];
+            nums[e]= nums[s];
+            nums[s] = temp;
+            s++;
+            e--;
         }
-        reverseSuffix(nums, pivot + 1);
-        System.out.println(Arrays.toString(nums));
-    }
 
-    int rightMostSuccessor(int[] nums, int threshold) {
-        for (int i = nums.length - 1; i >= 0; i--) {
-            if (threshold < nums[i]) return i;
-        }
-        return -1;
     }
+    public void nextPermutation(int[] nums) {
+        int i;
+        for(i=nums.length-1; i>0; i--){
 
-    int findBreakingPoint(int[] nums) {
-        for (int i = nums.length - 1; i > 0; i--) {
-            if (nums[i - 1] < nums[i]) return i;
+            if(nums[i]>nums[i-1]){
+                int minMax = nums[i-1];
+                int idx = i-1;
+                for(int j = i; j<nums.length; j++){
+                    if(nums[j]>nums[i-1] && (idx==i-1 || nums[j]<=nums[idx])){
+                        idx = j;
+                    }
+                }
+                int temp = nums[idx];
+                nums[idx] = nums[i-1];
+                nums[i-1] = temp;
+                break;
+            }
         }
-        return 0;
-    }
 
-    void reverseSuffix(int[] nums, int start) {
-        int end = nums.length - 1;
-        while (start < end) {
-            swap(nums, start++, end--);
-        }
-    }
-    
-    void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
+        reverse(nums, i);
     }
 
     public static void main(String[] args){
