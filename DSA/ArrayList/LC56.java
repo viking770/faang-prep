@@ -1,5 +1,3 @@
-package DSA.ArrayList;
-
 import java.util.*;
 
 public class LC56 {
