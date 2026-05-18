@@ -1,5 +1,6 @@
 public class UniquePaths {
 
+    //Space complexity O(m*n)
     public int findUniquePaths1(int m,int n){
         int[][] map = new int[m][n];
         
@@ -15,6 +16,7 @@ public class UniquePaths {
         return map[m - 1][n - 1];
     }
 
+    //Space complexity O(n)
     public int findUniquePaths2(int m,int n){
 
         if (m <= 0 || n <= 0) return 0;
