@@ -16,12 +16,12 @@ public class LRUCacheWithLinkedListNode {
     
         private int capacity;
         private Map<Integer, LinkedListNode> cache;
-        private LinkedList<LinkedListNode> lruList;
+        private java.util.LinkedList<LinkedListNode> lruList;
     
         LRUCacheWithLinkedListNode(int capacity){
             this.capacity = capacity;
             cache = new HashMap<>();
-            lruList = new LinkedList<>();
+            lruList = new java.util.LinkedList<>();
         }
     
         public int get(int key){
